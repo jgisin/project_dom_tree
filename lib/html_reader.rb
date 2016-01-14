@@ -1,18 +1,28 @@
 class HTMLReader
 
+  attr_accessor :file
+
   def initialize(file)
     @file = file
+    @html = nil
   end
 
-  def open_file
-    File.read(@file, "r")
+  def convert_file
+    open_file = File.open(@file, "r")
+    file_array = []
+    open_file.readlines.each do |line|
+      file_array << line.strip
+    end
+    open_file.close
+    @html = file_array.join.split( /(<\/*[^<>\/]*>)/ ) - [""]
   end
-
-  def 
 
 end
 
-=begin 
+reader = HTMLReader.new("lib/sample.html")
+p reader.convert_file
+
+=begin
 
 <div>
   div text before

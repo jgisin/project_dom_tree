@@ -44,7 +44,7 @@ class DOMParser
 end
 
 dom = DOMParser.new
- print dom.tag_parser("<img src='http://www.example.com' title='funny things'>")
- dom.tag_printer(dom.tag_parser("<p class='foo bar' id='baz' name='fozzie'>"))
+p dom.tag_parser("<img src='http://www.example.com' title='funny things'>")
+p dom.tag_printer(dom.tag_parser("<p class='foo bar' id='baz' name='fozzie'>"))
 # p tag_parser("<div id = 'bim'>")
 # p tag_parser("<img src='http://www.example.com' title='funny things'>")

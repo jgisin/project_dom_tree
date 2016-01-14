@@ -1,0 +1,18 @@
+
+Grabs opening tag, everything inside (including new tags), and closing tag /<([^<>]*)>(.*)<\/([^<>]*)>/
+
+
+entire dom
+  1. open_tag
+  2. content
+  3. closing_tag
+
+  creates node
+  return content
+
+opening tags
+<([^<>\/]*)>
+
+
+closing tags
+<(\/[^<>\/]*)>
