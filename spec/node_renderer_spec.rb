@@ -1,13 +1,15 @@
 require 'node_renderer.rb'
+require 'dom_parser.rb'
 
 describe NodeRenderer do
 
   let(:node_renderer) { NodeRenderer.new }
+  # let(:dom_parser) { DomParser.new }
 
-  describe '#initialize' do
+  describe '#find_our_node' do
 
     it 'returns a tree' do
-      node_renderer.tree.is_a?(Array)
+      
     end
 
   end
