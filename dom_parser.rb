@@ -26,9 +26,13 @@ class DomParser
     @tag_structs = []
   end
 
-  # make an array of all tags
-  # every time we hit a new opening tag, depth increases by 1 AND we set typ, classes, id, name, text, depth
-  # every time we hit a closing tag, depth decreases by 1
+
+  def match_multiple_tags
+    # grab the text between an opening tag and the next tag
+    # separate the "type" from the "text"
+    # save "type" as tag.type, "text" as tag.text
+  end
+
 
   def find_all_tags
     depth = 0
@@ -44,6 +48,7 @@ class DomParser
       end
     end
   end
+
 
   def generate_tree
     #iterate through @tag_list
@@ -81,9 +86,10 @@ end
 
 game = DomParser.new
 game.find_all_tags
-game.generate_tree
+puts game.generate_tree
+# puts game.tag_list.inspect
 game.tag_structs.each do |tag|
-  print " " * tag.depth
+  print "  " * tag.depth
   puts tag.type
 end
 puts game.html_string
