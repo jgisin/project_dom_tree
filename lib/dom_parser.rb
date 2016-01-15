@@ -4,8 +4,6 @@ require_relative "./html_reader.rb"
 require_relative "./html_writer.rb"
 
 class DOMParser
-
-
   def initialize
     @reader = HTMLReader.new
     @writer = HTMLWriter.new
@@ -75,6 +73,10 @@ class DOMParser
   end
 
   def recreate_html
+
+  end
+
+  def tree_to_string(tree)
 
   end
 

@@ -31,26 +31,27 @@ class HTMLReader
   end
 
   def is_tag?(string)
-
+    !!string.match(/<[^<>\/]*>/)
   end
 
   def is_closing_tag?(string)
-
+    !!string.match(/<(\/[^<>\/]*)>/)
   end
 
   def is_ignore_tag?(string)
-
+    IGNORE_TAGS.include?(string) &&
+    (is_tag?(string))
   end
 
-  def is_ignore_closing_tag(string)
-
+  def is_ignore_closing_tag?(string)
+    IGNORE_TAGS.include?(string) &&
+    (is_closing_tag?(string))
   end
-
 
 end
 
-reader = HTMLReader.new("lib/sample.html")
-p reader.convert_file
+# reader = HTMLReader.new
+# p reader.convert_file
 
 =begin
 
