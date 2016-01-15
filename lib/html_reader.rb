@@ -1,8 +1,11 @@
 class HTMLReader
 
-  attr_accessor :file
+  IGNORE_TAGS = ["<b>","</b>", "<em>", "</em>", "<i>", "</i>", "<small>", "</small>", "<strong>", "</strong>", "<sub>", "</sub>", "<sup>", "</sup>", "<ins>", "</ins>", "<del>", "</del>", "<mark>", "</mark>" ]
 
-  def initialize(file)
+  attr_accessor :file
+  attr_reader :html
+
+  def initialize
     @file = file
     @html = nil
   end
@@ -14,8 +17,35 @@ class HTMLReader
       file_array << line.strip
     end
     open_file.close
-    @html = file_array.join.split( /(<\/*[^<>\/]*>)/ ) - [""]
+    @html = file_array.join.split( /(<\/*[^<>\/]*>)/ ) - [""].join
   end
+
+  def ignore_tag
+    # when finding an ignore tag
+      #check if element before ignore is tag
+        #if not tag add to concat
+      #select ignore, element after ignore, end-ignore
+        #add to concat
+      #check if element after end-ignore is tag
+        #if not add to concat
+  end
+
+  def is_tag?(string)
+
+  end
+
+  def is_closing_tag?(string)
+
+  end
+
+  def is_ignore_tag?(string)
+
+  end
+
+  def is_ignore_closing_tag(string)
+
+  end
+
 
 end
 
