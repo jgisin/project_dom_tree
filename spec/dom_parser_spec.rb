@@ -1,5 +1,6 @@
 require 'dom_parser.rb'
 
+
 describe DomParser do
 
   let (:dom_parser) { DomParser.new }
