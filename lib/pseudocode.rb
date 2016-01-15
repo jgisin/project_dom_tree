@@ -29,3 +29,9 @@
 
 # Part4: rebuilding the DOM
 # - rebuild original HTML file from your tree
+
+
+
+# load file, send to dom_parser
+# build tree
+# send tree to node_renderer

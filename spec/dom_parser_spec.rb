@@ -30,16 +30,31 @@ describe DomParser do
       expect(dom_parser.tag_structs[1].children.length).to eq(1)
       expect(dom_parser.tag_structs[2].children.length).to eq(0)
     end
+
+    it 'creates the right number of nodes' do
+      dom_parser.find_all_tags(html_string)
+      tag_structs = dom_parser.generate_tree
+      expect(tag_structs.length).to eq(3)
+    end
   end
 
   describe '#set_tag_attributes' do
 
-    it 'creates tag info correctly' do
-      new_tag = dom_parser.set_tag_attributes("<div class='class another' id='idea'>", 0)
+    it "creates simple tags correctly" do
+      new_tag = dom_parser.set_tag_attributes("<p>", 0, "this is some text")
+      expect(new_tag.type).to eq("p")
+      expect(new_tag.closing).to eq("</p>")
+    end
+
+    it 'creates tag with attributes correctly' do
+      new_tag = dom_parser.set_tag_attributes("<div class='class another' id='idea'>", 0, "this is some text")
       expect(new_tag.type).to eq("div")
       expect(new_tag.classes).to eq(["class", "another"])
       expect(new_tag.id).to eq("idea")
+      expect(new_tag.text).to eq("this is some text")
     end
+
+
   end
 
 
