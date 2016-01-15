@@ -8,7 +8,3 @@ class FileLoader
   end
 
 end
-
-# fl = FileLoader.new
-# p long_string = fl.process_file('test.html')
-# p long_string.scan(/>(\s*.*?\s*)</).map {|array| array[0]}

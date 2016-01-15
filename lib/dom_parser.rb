@@ -30,7 +30,7 @@ class DomParser
     @tree = nil
   end
 
-  def build_tree(file_name)
+  def build_tree(file_name="../test.html")
     @html_string = @file_loader.process_file(file_name)
     find_all_tags
     @tree = generate_tree
@@ -90,10 +90,4 @@ end
 
 # game = DomParser.new
 # game.build_tree("../test.html")
-# p game.root
-
-# game.tag_structs.each do |tag|
-#   print "  " * tag.depth
-#   puts tag.type, tag.text
-# end
 

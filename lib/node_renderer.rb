@@ -35,9 +35,8 @@ class NodeRenderer
     puts "    ID: #{tag.id}"
     puts "    Text: #{tag.text}"
     puts "    Name: #{tag.name}"
-    # TODO: You should be able to pass nil to receive statistics for the entire document (the root node).
-
   end
+
 
   def find_our_node(target_node)
     queue = []

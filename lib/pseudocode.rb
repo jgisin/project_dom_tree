@@ -17,7 +17,7 @@
 #     4. be able to pass `nil` and receive stats about the whole document
 
 
-# Part3: searching
+# Part3 searching: COMPLETE
 
 #     searcher = TreeSearcher.new(tree)
 #     sidebars = searcher.search_by(:class, "sidebar")
@@ -26,11 +26,13 @@
 # - search for name, text, id, or class
 
 
-# Part4: rebuilding the DOM
+# Part4 rebuilding the DOM: NEEDS CLOSING TAGS!
 # - rebuild original HTML file from your tree
 
 
 
-# load file, send to dom_parser
-# build tree
-# send tree to node_renderer
+# dom_parser = parse HTML, find tags, build tree
+# file_loader = micro-class for processing the file
+# node_renderer = find number of nodes below the given node, what type of tags they are, and the attributes of the given tag
+# tree_searcher = search for tags by attribute & search term
+# rebuild = output full html
