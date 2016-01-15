@@ -29,7 +29,7 @@ class DomUI
   def user_interaction
     # file_location 
     # Julia - uncomment above, and change the file to be @file_name
-    @html_string = @file_loader.process_file('./spec/test.html')
+    @html_string = @file_loader.process_file('test.html')
   end
 
 
