@@ -14,7 +14,10 @@ class NodeRenderer
 
   end
 
-  def render(node)
+  def render(node=nil)
+    node = "html" if node.nil?
+    puts "Your node was: #{node}"
+    puts
     # Number of children below this node
     number_of_children(node)
     puts "There are #{@child_count} nodes below this node."
@@ -45,7 +48,6 @@ class NodeRenderer
         queue << child 
       end
     end
-
   end
 
 
@@ -89,21 +91,5 @@ class NodeRenderer
 end
 
 
-renderer = NodeRenderer.new
-p renderer.render("h2")
-# p renderer.children_type("main")
-# p renderer.tree[0].children
-
-# start with an empty queue
-# put root node into the queue
-# if the root node is the node we asked for:
-  # put the children in the queue
-  ## evaluate the child, put their children into the queue
-  ## increase the count each time we encounter a child
-  ## return when we have no more children
-# if the root node is NOT what we asked for:
-  # keep going through children until we find the one we want
-  # put its children into the queue
-  ## evaluate the child, put their children into the queue
-  ## increase the count each time we encounter a child
-  ## return when we have no more children
+# renderer = NodeRenderer.new
+# p renderer.render("body")

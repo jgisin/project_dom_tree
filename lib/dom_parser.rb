@@ -14,7 +14,7 @@ class DomParser
   ALL_TAG_REGEX = /(<[a-z]*.*?>)/
   OPEN_TAG_REGEX = /<[a-z].*?>/
   # SELF_CLOSING_REGEX = /^(.*?>.*?)>/
-  ROOT_CLOSING = /<\/html>/
+  # ROOT_CLOSING = /<\/html>/
 
 
   attr_reader :root, :tag_list, :tag_structs, :html_string, :tag_text, :tree
@@ -34,7 +34,6 @@ class DomParser
     @html_string = @file_loader.process_file(file_name)
     find_all_tags
     @tree = generate_tree
-    # p "here's the root:", @root
   end
 
 
@@ -89,8 +88,8 @@ class DomParser
 
 end
 
-game = DomParser.new
-game.build_tree("../test.html")
+# game = DomParser.new
+# game.build_tree("../test.html")
 # p game.root
 
 # game.tag_structs.each do |tag|

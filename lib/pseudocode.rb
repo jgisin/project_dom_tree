@@ -1,15 +1,14 @@
-# Part0:
+# Part0: IN-PROGRESS
 # - write tests!
 
 
-# Part1: parsing
-# - user interaction --> dom_ui.rb
+# Part1 parsing: COMPLETE
 # - read in a file containing HTML --> file_loader.rb
 # - parse out the individual nodes --> dom_parser.rb
 # - make the node tree --> dom_parser.rb
 
 
-# Part2: rendering
+# Part2 rendering: COMPLETE
 # - takes in a tree
 # - output key statistics about nodes and their sub-trees:
 #     1. total nodes in the sub-tree below that node
