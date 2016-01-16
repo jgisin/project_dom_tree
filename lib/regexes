@@ -10,6 +10,9 @@ entire dom
   creates node
   return content
 
+Tag Type
+  <(\w+) 
+
 opening tags
 <([^<>\/]*)>
 

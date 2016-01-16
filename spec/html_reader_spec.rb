@@ -39,32 +39,28 @@ describe "HTMLReader" do
     end
   end
 
-  describe "is_ignore_tag?" do
-    it "returns true if it is an ignore (opening tag)" do
-      expect(reader.is_ignore_tag?(ig_opening)).to eq(true)
+  describe "#convert_file" do
+
+    it "converts text to array after processing" do
+      reader.file = "lib/sample.html"
+      expect(reader.convert_file).to be_a(Array)
     end
 
-    it "returns false if it is not an ignore opening tag" do
-      expect(reader.is_ignore_tag?(ig_closing)).to eq(false)
+    it "processes html into distinct elements" do
+      reader.file = "lib/sample.html"
+      expect(reader.convert_file).to eq(["<div>",
+                                         "div text before",
+                                         "<p>",
+                                         "p text",
+                                         "</p>",
+                                         "<div>",
+                                         "more div text",
+                                         "</div>",
+                                         "div text after",
+                                         "</div>"])
     end
 
-    it "returns false if not a ignore tag at all" do
-      expect(reader.is_ignore_tag?("text")).to eq(false)
-    end
   end
 
-  describe "is_ignore_closing_tag" do
-    it "false if not a closing tag" do
-      expect(reader.is_ignore_closing_tag?(ig_opening)).to eq(false)
-    end
-
-    it "true if is a closing tag" do
-      expect(reader.is_ignore_closing_tag?(ig_closing)).to eq(true)
-    end
-
-    it "returns false if not a tag at all" do
-      expect(reader.is_ignore_closing_tag?("text")).to eq(false)
-    end
-  end
 
 end
