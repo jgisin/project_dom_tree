@@ -1,15 +1,13 @@
 require 'node_renderer.rb'
-require 'dom_parser.rb'
 
 describe NodeRenderer do
 
-  let(:node_renderer) { NodeRenderer.new }
-  # let(:dom_parser) { DomParser.new }
+  let(:nr) { NodeRenderer.new }
 
   describe '#find_our_node' do
 
-    it 'returns a tree' do
-      
+    it 'returns tag that matches target_node' do
+      nr.find_our_node("html")
     end
 
   end
