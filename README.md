@@ -12,6 +12,7 @@ Andrew and Julia.
 
   To use:
   parser = DomParser.new
+  
   print parser.build_tree("../test.html")
 
 2. file_loader.rb = micro-class for processing the HTML file
@@ -20,6 +21,7 @@ Andrew and Julia.
   
   To use:
   r = NodeRenderer.new
+
   r.render("html") 
 
   ^^^ "html" can be any type of tag in your file, for example: html, head, body, div, li, h2, etc.
@@ -29,6 +31,7 @@ Andrew and Julia.
 
   To use:
   ts = TreeSearcher.new
+  
   ts.search_by(:classes, "inner-div")
 
   ^^^ attributes include: text, type, classes, id, and name
@@ -38,7 +41,9 @@ Andrew and Julia.
 
   To use:
   r = Rebuild.new
+  
   r.rebuild_html
+  
   puts r.new_html
 
   
